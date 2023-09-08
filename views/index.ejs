@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>TickIt</title>
+</head>
+<body>
+    <div class="container">
+        <div class="todo-app">
+            <h1><%= `${day}, ${m} ${date}, ${y}` %></h1>
+        
+            <form action="/" method="post">
+                <div class="row">
+                <input tupe="text" name="newItem" id="input-box" autocomplete="off" placeholder="Add your task" required>
+                <button type="submit">Add</button>
+                </div>
+            </form>
+    
+            <ul id="list">
+                <li onclick="this.classList.toggle('checked')">Buy Food</li>
+                <li onclick="this.classList.toggle('checked')">Cook Food</li>
+                <li onclick="this.classList.toggle('checked')">Eat Food</li>
+                <% for(let i=0;i<newItem.length;i++){ %>
+                <li onclick="this.classList.toggle('checked')"><%= newItem[i]; %></li>
+                <% } %>
+            </ul>
+        </div>
+    </div>
+
+</body>
+</html>
